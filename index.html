@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Список дел</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://bootswatch.com/yeti/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container" ng-app="App" ng-controller="Todo"> 
+<div class="row"> 
+ <div class="col-md-3"> 
+   <h3>Добавление</h3>
+   <input class="form-group" ng-model="newItem" type="text"/> {{newItem}}
+   <button ng-click="Add()" class="btn btn-primary">Добавить</button>
+   
+   <h3>Архивация</h3>
+<button ng-click="Clear()" class="btn btn-primary">Удалить завершённые</button> 
+</div> 
+<div class="col-md-9"> 
+<h1>Список дел</h1> 
+<div ng-repeat="item in todo"> 
+<label ng-class="{'done': item.done }"> 
+<input ng-model="item.done"  type="checkbox"/> 
+{{item.name}} 
+  </label> 
+</div> 
+</div> 
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
